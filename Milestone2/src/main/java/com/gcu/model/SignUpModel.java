@@ -1,50 +1,107 @@
 // Emmanuel Loria
 package com.gcu.model;
 
+import jakarta.validation.constraints.NotNull;
+import jakarta.validation.constraints.Size;
+
 public class SignUpModel {
-	private Long id;
-	private String orderNo;
-	private String productName;
-	private float price;
-	private int quantity;
+	@NotNull(message="First name is a required field")
+	@Size(min=1, max=32, message="First Name must be between 1 and 32 characters")
+	private String firstName;
+
+
+	@NotNull(message="Last name is a required field")
+	@Size(min=1, max=32, message="Last Name must be between 1 and 32 characters")
+	private String lastName;
 	
-	public SignUpModel(Long id, String orderNo, String productName, float price, int quantity) {
+	@NotNull(message="Email is a required field")
+	private String email;
+	
+	@NotNull(message="Phone Number is a required field")
+	private String phoneNumber;
+	
+	@NotNull(message="User name is a required field")
+	@Size(min=1, max=32, message="User name must be between 1 and 32 characters")
+	private String username;
+	
+	@NotNull(message="Password is a required field")
+	@Size(min=1, max=32, message="Password must be between 1 and 32 characters")
+	private String password;
+	
+	
+	public SignUpModel(
+			@NotNull(message = "First name is a required field") @Size(min = 1, max = 32, message = "First Name must be between 1 and 32 characters") String firstName,
+			@NotNull(message = "Last name is a required field") @Size(min = 1, max = 32, message = "Last Name must be between 1 and 32 characters") String lastName,
+			@NotNull(message = "Email is a required field") String email, String phoneNumber,
+			@NotNull(message = "User name is a required field") @Size(min = 1, max = 32, message = "User name must be between 1 and 32 characters") String username,
+			@NotNull(message = "Password is a required field") @Size(min = 1, max = 32, message = "Password must be between 1 and 32 characters") String password) {
 		super();
-		this.id = id;
-		this.orderNo = orderNo;
-		this.productName = productName;
-		this.price = price;
-		this.quantity = quantity;
-		
+		this.firstName = firstName;
+		this.lastName = lastName;
+		this.email = email;
+		this.phoneNumber = phoneNumber;
+		this.username = username;
+		this.password = password;
 	}
-	public Long getId() {
-		return id;
+
+
+	public String getFirstName() {
+		return firstName;
 	}
-	public void setId(Long id) {
-		this.id = id;
+
+
+	public void setFirstName(String firstName) {
+		this.firstName = firstName;
 	}
-	public String getOrderNo() {
-		return orderNo;
+
+
+	public String getLastName() {
+		return lastName;
 	}
-	public void setOrderNo(String orderNo) {
-		this.orderNo = orderNo;
+
+
+	public void setLastName(String lastName) {
+		this.lastName = lastName;
 	}
-	public String getProductName() {
-		return productName;
+
+
+	public String getEmail() {
+		return email;
 	}
-	public void setProductName(String productName) {
-		this.productName = productName;
+
+
+	public void setEmail(String email) {
+		this.email = email;
 	}
-	public float getPrice() {
-		return price;
+
+
+	public String getPhoneNumber() {
+		return phoneNumber;
 	}
-	public void setPrice(float price) {
-		this.price = price;
+
+
+	public void setPhoneNumber(String phoneNumber) {
+		this.phoneNumber = phoneNumber;
 	}
-	public int getQuantity() {
-		return quantity;
+
+
+	public String getUsername() {
+		return username;
 	}
-	public void setQuantity(int quantity) {
-		this.quantity = quantity;
+
+
+	public void setUsername(String username) {
+		this.username = username;
 	}
+
+
+	public String getPassword() {
+		return password;
+	}
+
+
+	public void setPassword(String password) {
+		this.password = password;
+	}
+	
 }
