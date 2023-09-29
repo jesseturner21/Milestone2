@@ -7,6 +7,7 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 public class Milestone2Application {
 
 	public static void main(String[] args) {
+		System.out.println("ayo");
 		SpringApplication.run(Milestone2Application.class, args);
 	}
 
