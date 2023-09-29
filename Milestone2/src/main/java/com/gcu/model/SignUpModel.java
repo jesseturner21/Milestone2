@@ -1,14 +1,14 @@
 // Emmanuel Loria
 package com.gcu.model;
 
-public class OrderModel {
+public class SignUpModel {
 	private Long id;
 	private String orderNo;
 	private String productName;
 	private float price;
 	private int quantity;
 	
-	public OrderModel(Long id, String orderNo, String productName, float price, int quantity) {
+	public SignUpModel(Long id, String orderNo, String productName, float price, int quantity) {
 		super();
 		this.id = id;
 		this.orderNo = orderNo;
