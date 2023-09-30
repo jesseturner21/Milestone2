@@ -10,13 +10,12 @@
   </head>
   <body>
     <main>
-    	<h1> Hello from Jesse branch</h1>
        <h2 th:text="${message}">This is my default text</h2> <br/>
        
-       <form action="#" th:action="@{doLogin}" th:object="${loginModel}" method="post">
+       <form action="#" th:action="@{login/doLogin}" th:object="${loginModel}" method="post">
 			<table>
 				<tr> 
-					<td>User Name:</td><td><input type="text" th:field="*{username}" ></td><td><h5 style="color:red" th:if="${#fields.hasErrors('username')}" th:errors="*{username}">User Name Error</h5></td>
+					<td>New User Name:</td><td><input type="text" th:field="*{username}" ></td><td><h5 style="color:red" th:if="${#fields.hasErrors('username')}" th:errors="*{username}">User Name Error</h5></td>
 				</tr>
 				<tr>
 					<td>Password:</td><td><input type="password" th:field="*{password}" ></td><td><h5 style="color:red" th:if="${#fields.hasErrors('password')}" th:errors="*{password}">Password Error</h5></td>
