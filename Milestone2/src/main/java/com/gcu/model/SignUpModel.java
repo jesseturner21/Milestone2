@@ -43,7 +43,9 @@ public class SignUpModel {
 		this.username = username;
 		this.password = password;
 	}
-
+	public SignUpModel() {
+		
+	}
 
 	public String getFirstName() {
 		return firstName;
