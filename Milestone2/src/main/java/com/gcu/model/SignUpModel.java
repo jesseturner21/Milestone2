@@ -15,9 +15,11 @@ public class SignUpModel {
 	private String lastName;
 	
 	@NotNull(message="Email is a required field")
+	@Size(min=3, max=200, message="Email must be between 3 and 200 characters")
 	private String email;
 	
 	@NotNull(message="Phone Number is a required field")
+	@Size(min=10, max=10, message="Phone number must include 10 digits")
 	private String phoneNumber;
 	
 	@NotNull(message="User name is a required field")
