@@ -67,7 +67,6 @@ public class HomeController {
 		model.addAttribute(signUpModel);
 		//Simply return a Model with an attribute named message and return a View named signup using a passed in ModelMap
 		model.addAttribute("message", "Sign Up");
-		
 		return "signUp";
 	}
 
