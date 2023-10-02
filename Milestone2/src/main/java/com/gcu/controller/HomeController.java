@@ -19,7 +19,7 @@ public class HomeController {
 	@GetMapping("/")
 	public String printHello(Model model) {
 		
-		//Simply return a Model with an attribute named message and return a View named hello using a passed in ModelMap
+		//Simply return a Model with an attribute named message and return a View named home using a passed in ModelMap
 		model.addAttribute("message", "Welcome to The Blog Who Cried Wolf!");
 		return "home";
 	}
@@ -65,7 +65,6 @@ public class HomeController {
 		model.addAttribute(signUpModel);
 		//Simply return a Model with an attribute named message and return a View named hello using a passed in ModelMap
 		model.addAttribute("message", "Sign Up");
-		
 		return "signUp";
 	}
 
