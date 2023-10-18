@@ -24,6 +24,7 @@ public class HomeController {
 		return "home";
 	}
 	
+	// displays the login page
 	@GetMapping("/login")
 	public String displayLogin(Model model) {
 		System.out.print("in Login");
@@ -34,6 +35,7 @@ public class HomeController {
 		return "login";
 	}
 	
+	// displays the 
 	@PostMapping("/doLogin")
 	public String printLogin(@Valid LoginModel login, BindingResult bindingResult, Model model) {
 		
@@ -63,7 +65,7 @@ public class HomeController {
 		model.addAttribute("message", "Sign Up");
 		SignUpModel signUpModel = new SignUpModel();
 		model.addAttribute(signUpModel);
-		//Simply return a Model with an attribute named message and return a View named hello using a passed in ModelMap
+		//Simply return a Model with an attribute named message and return a View named signup using a passed in ModelMap
 		model.addAttribute("message", "Sign Up");
 		return "signUp";
 	}
