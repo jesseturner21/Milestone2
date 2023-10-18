@@ -3,7 +3,7 @@ package com.gcu.business;
 import java.util.ArrayList;
 import java.util.List;
 
-import com.gcu.model.OrderModel;
+import com.gcu.model.BlogModel;
 
 public class BlogsBusinessService implements BlogsBusinessServiceInterface{
 
@@ -13,7 +13,7 @@ public class BlogsBusinessService implements BlogsBusinessServiceInterface{
 	}
 
 	@Override
-	public List<BlogModel> getOrders() {
+	public List<BlogModel> getBlogs() {
 		// Create some Orders
 		List<BlogModel> orders = new ArrayList<BlogModel>();
 		
