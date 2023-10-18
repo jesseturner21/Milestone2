@@ -29,7 +29,7 @@ public class HomeController {
 	public String displayLogin(Model model) {
 		System.out.print("in Login");
 		model.addAttribute("title", "Login Form");
-		model.addAttribute("message", "Login");
+		//model.addAttribute("message", "Login");
 		LoginModel loginModel = new LoginModel();
 		model.addAttribute(loginModel);
 		return "login";
@@ -61,12 +61,10 @@ public class HomeController {
 	@GetMapping("/signUp")
 	public String printSignUp(Model model) {
 		System.out.print("in signup");
-		model.addAttribute("title", "Sign Up Form");
-		model.addAttribute("message", "Sign Up");
+		model.addAttribute("title", "Sign Up");
 		SignUpModel signUpModel = new SignUpModel();
 		model.addAttribute(signUpModel);
 		//Simply return a Model with an attribute named message and return a View named signup using a passed in ModelMap
-		model.addAttribute("message", "Sign Up");
 		return "signUp";
 	}
 
