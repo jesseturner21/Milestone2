@@ -2,22 +2,28 @@
 package com.gcu.model;
 
 import jakarta.validation.constraints.NotNull;
+import jakarta.validation.constraints.Size;
 
 public class BlogModel {
 	
 	@NotNull(message="Title is a required field")
+	@Size(min=1, message="Title must have at least one character")
 	private String title;
 	
 	@NotNull(message="Subtitle is a required field")
+	@Size(min=1, message="Sub title must have at least one character")
 	private String subtitle;
 	
 	@NotNull(message="Content is a required field")
+	@Size(min=1, message="Content must have at least one character")
 	private String content;
 	
 	@NotNull(message="Author is a required field")
+	@Size(min=1, message="Author must have at least one character")
 	private String author; 
 	
 	@NotNull(message="Date is a required field")
+	@Size(min=1, message="Date must have at least one character")
 	private String date;
 	
 	public BlogModel() {
