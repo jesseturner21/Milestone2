@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html xmlns:th="http://thymeleaf.org">
+
+  <head>
+    <meta charset="UTF-8">
+
+    <title>Create Blog</title>
+    <link rel="stylesheet" href="./style.css">
+    <link rel="icon" href="./favicon.ico" type="image/x-icon">
+  </head>
+  <body>
+    <main>
+    
+       <h2 th:text="${message}">This is my default text</h2> <br/>
+       
+       <form action="#" th:action="@{createBlog}" th:object="${blogModel}" method="post">
+			<table>
+				<tr> 
+					<td>Title:</td><td><input type="text" th:field="*{title}" ></td><td><h5 style="color:red" th:if="${#fields.hasErrors('title')}" th:errors="*{title}">Title Error</h5></td>
+				</tr>
+				<tr>
+					<td>Author:</td><td><input type="password" th:field="*{author}" ></td><td><h5 style="color:red" th:if="${#fields.hasErrors('author')}" th:errors="*{author}">Author Error</h5></td>
+				</tr>
+				<tr> 
+					<td>Subtitle:</td><td><input type="text" th:field="*{subtitle}" ></td><td><h5 style="color:red" th:if="${#fields.hasErrors('subtitle')}" th:errors="*{subtitle}">Subtitle Error</h5></td>
+				</tr>
+				<tr> 
+					<td>Content:</td><td><input type="text" th:field="*{content}" ></td><td><h5 style="color:red" th:if="${#fields.hasErrors('content')}" th:errors="*{content}">Content Error</h5></td>
+				</tr>
+				<tr> 
+					<td>Date:</td><td><input type="text" th:field="*{date}" ></td><td><h5 style="color:red" th:if="${#fields.hasErrors('date')}" th:errors="*{date}">Date Error</h5></td>
+				</tr>	
+				<tr>
+					<td colspan="2"><input type="submit" value="Submit" /></td>
+				</tr> 
+			</table>
+			<div th:if="${#fields.hasErrors('*')}">List of Errors</div>
+			<div th:each="err : ${#fields.errors('*')}">
+				<span style="color:red" th:text="${err}" class="fieldError"></span>
+			</div>
+		</form>
+
+       
+    </main>
+	<script src="index.js"></script>
+  </body>
+</html>
