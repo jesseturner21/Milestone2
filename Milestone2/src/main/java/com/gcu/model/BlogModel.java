@@ -19,6 +19,10 @@ public class BlogModel {
 	
 	@NotNull(message="Date is a required field")
 	private String date;
+	
+	public BlogModel() {
+		// default constructor
+	}
 
 	public BlogModel(@NotNull(message = "Title is a required field") String title,
 			@NotNull(message = "Subtitle is a required field") String subtitle,
