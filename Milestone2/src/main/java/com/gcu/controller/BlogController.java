@@ -21,7 +21,7 @@ public class BlogController {
 		model.addAttribute("message", "Create Blog");
 		BlogModel blogModel = new BlogModel();
 		model.addAttribute(blogModel);
-		return "blogs";
+		return "blog";
 	}
 	
 	// processes the input in the blog form
@@ -32,7 +32,7 @@ public class BlogController {
 		if(bindingResult.hasErrors()) {
 			System.out.println("has errors");
 			model.addAttribute("title", "Create Blog Form");
-			return "blogs";
+			return "blog";
 		}
 		System.out.println("home");
 		model.addAttribute("message", "Welcome to The Blog Who Cried Wolf!");
