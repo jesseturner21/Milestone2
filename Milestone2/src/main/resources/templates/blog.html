@@ -13,7 +13,7 @@
     
        <h2 th:text="${message}">This is my default text</h2> <br/>
        
-       <form action="#" th:action="@{createBlog}" th:object="${blogModel}" method="post">
+       <form action="#" th:action="@{/createBlog}" th:object="${blogModel}" method="post">
 			<table>
 				<tr> 
 					<td>Title:</td><td><input type="text" th:field="*{title}" ></td><td><h5 style="color:red" th:if="${#fields.hasErrors('title')}" th:errors="*{title}">Title Error</h5></td>
