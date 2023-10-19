@@ -9,33 +9,32 @@
   <div layout:fragment="content">
   
     <main>
-    
-       <h2 th:text="${message}">This is my default text</h2> <br/>
+    	
+       <h2 th:text="${message}" style="margin-left: 3.5%">This is my default text</h2> <br/>
        
        <form action="#" th:action="@{/createBlog}" th:object="${blogModel}" method="post">
 			<table>
 				<tr> 
-					<td>Title:</td><td><input type="text" th:field="*{title}" ></td><td><h5 style="color:red" th:if="${#fields.hasErrors('title')}" th:errors="*{title}">Title Error</h5></td>
+					<td>Title:</td><td><input type="text" th:field="*{title}"></td><td><h5 style="color:#BF2237" th:if="${#fields.hasErrors('title')}" th:errors="*{title}">Title Error</h5></td>
 				</tr>
 				<tr>
-					<td>Author:</td><td><input type="text" th:field="*{author}" ></td><td><h5 style="color:red" th:if="${#fields.hasErrors('author')}" th:errors="*{author}">Author Error</h5></td>
+					<td>Author:</td><td><input type="text" th:field="*{author}" ></td><td><h5 style="color:#BF2237" th:if="${#fields.hasErrors('author')}" th:errors="*{author}">Author Error</h5></td>
 				</tr>
 				<tr> 
-					<td>Subtitle:</td><td><input type="text" th:field="*{subtitle}" ></td><td><h5 style="color:red" th:if="${#fields.hasErrors('subtitle')}" th:errors="*{subtitle}">Subtitle Error</h5></td>
+					<td>Subtitle:</td><td><input type="text" th:field="*{subtitle}" ></td><td><h5 style="color:#BF2237" th:if="${#fields.hasErrors('subtitle')}" th:errors="*{subtitle}">Subtitle Error</h5></td>
 				</tr>
 				<tr> 
-					<td>Content:</td><td><input type="text" th:field="*{content}" ></td><td><h5 style="color:red" th:if="${#fields.hasErrors('content')}" th:errors="*{content}">Content Error</h5></td>
+					<td>Content:</td><td><input type="text" th:field="*{content}" ></td><td><h5 style="color:#BF2237" th:if="${#fields.hasErrors('content')}" th:errors="*{content}">Content Error</h5></td>
 				</tr>
 				<tr> 
-					<td>Date:</td><td><input type="text" th:field="*{date}" ></td><td><h5 style="color:red" th:if="${#fields.hasErrors('date')}" th:errors="*{date}">Date Error</h5></td>
-				</tr>	
+					<td>Date:</td><td><input type="text" th:field="*{date}" ></td><td><h5 style="color:#BF2237" th:if="${#fields.hasErrors('date')}" th:errors="*{date}">Date Error</h5></td> 
 				<tr>
-					<td colspan="2"><input type="submit" value="Submit" /></td>
+			    	<td colspan="2"><input type="submit" value="Submit" / style="margin-left: 50%"></td>
 				</tr> 
 			</table>
 			<div th:if="${#fields.hasErrors('*')}">List of Errors</div>
 			<div th:each="err : ${#fields.errors('*')}">
-				<span style="color:red" th:text="${err}" class="fieldError"></span>
+				<span style="color:#BF2237" th:text="${err}" class="fieldError"></span>
 			</div>
 		</form>
 
