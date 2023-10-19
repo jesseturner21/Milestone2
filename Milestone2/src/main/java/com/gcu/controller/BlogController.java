@@ -21,6 +21,7 @@ public class BlogController {
 		BlogModel blogModel = new BlogModel();
 		model.addAttribute(blogModel);
 
+
 		return "blog";
 
 	}
