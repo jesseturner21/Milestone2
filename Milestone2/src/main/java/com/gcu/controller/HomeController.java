@@ -39,11 +39,19 @@ public class HomeController {
 	@PostMapping("/doLogin")
 	public String printLogin(@Valid LoginModel login, BindingResult bindingResult, Model model) {
 		
+		
 		// Check for validation errors
-				if(bindingResult.hasErrors()) {
-					model.addAttribute("title", "Login Form");
-					return "login";
-				}
+		if(bindingResult.hasErrors()) {
+			model.addAttribute("title", "Login Form");
+			return "login";
+		}
+		if(!login.getPassword().equals("password")) {
+			model.addAttribute("title", "Login Form");
+			bindingResult.rejectValue("password", "wrong.password", "Incorrect Password or Username");
+			
+			return "login";
+		}
+		
 		model.addAttribute("message", "Welcome to The Blog Who Cried Wolf!");
 		return "home";
 	}
