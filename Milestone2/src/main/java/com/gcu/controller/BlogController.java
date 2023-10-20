@@ -16,8 +16,8 @@ public class BlogController {
 	// displays the create blog page form
 	@GetMapping("/blog")
 	public String displayCreateBlog(Model model) {
-		model.addAttribute("title", "Create Blog Form");
-		//model.addAttribute("message", "Create Blog");
+		//model.addAttribute("title", "Create Blog");
+		model.addAttribute("message", "Create Blog");
 		BlogModel blogModel = new BlogModel();
 		model.addAttribute(blogModel);
 

@@ -28,8 +28,8 @@ public class HomeController {
 	@GetMapping("/login")
 	public String displayLogin(Model model) {
 		System.out.print("in Login");
-		model.addAttribute("title", "Login Form");
-		//model.addAttribute("message", "Login");
+		//model.addAttribute("title", "Login Form");
+		model.addAttribute("message", "Login");
 		LoginModel loginModel = new LoginModel();
 		model.addAttribute(loginModel);
 		return "login";
