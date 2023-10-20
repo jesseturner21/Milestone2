@@ -10,12 +10,12 @@ import com.gcu.business.UserServiceInterface;
 @Configuration
 public class SpringConfig {
 
-	@Bean(name="blogsBusinessService", initMethod="init", destroyMethod="destroy")
+	@Bean(name="blogsBusinessService")
 	public BlogsBusinessServiceInterface getBlogsBuisiness() {
 		return new BlogsBusinessService();
 	}
 	
-	@Bean(name="userBusinessService", initMethod="init", destroyMethod="destroy")
+	@Bean(name="userBusinessService")
 	public UserServiceInterface getUserBuisiness() {
 		return new UserService();
 	}

@@ -19,7 +19,7 @@
 					<td>Password:</td><td><input type="password" th:field="*{password}" ></td><td><h5 style="color:BF2237" th:if="${#fields.hasErrors('password')}" th:errors="*{password}">Password Error</h5></td>
 				</tr>	
 				<tr>
-					<td colspan="2"><input type="submit" value="Submit" / style="margin-left: 50%"></td>
+					<td colspan="2"><input type="submit" value="Submit" style="margin-left: 50%" ></td>
 				</tr> 
 			</table>
 			<div th:if="${#fields.hasErrors('*')}">List of Errors</div>
