@@ -52,10 +52,10 @@ public class HomeController {
 		
 		// Check for validation errors
 				if(bindingResult.hasErrors()) {
-					model.addAttribute("title", "Sign Up Form");
+					model.addAttribute("title", "Sign Up");
 					return "signUp";
 				}
-		model.addAttribute("message", "Welcome to The Blog Who Cried Wolf!");
+		//model.addAttribute("message", "Welcome to The Blog Who Cried Wolf!");
 		return "home";
 	}
 	@GetMapping("/signUp")
