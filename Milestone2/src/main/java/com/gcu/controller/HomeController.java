@@ -28,8 +28,8 @@ public class HomeController {
 	@GetMapping("/login")
 	public String displayLogin(Model model) {
 		System.out.print("in Login");
-		model.addAttribute("title", "Login Form");
-		//model.addAttribute("message", "Login");
+		//model.addAttribute("title", "Login Form");
+		model.addAttribute("message", "Login");
 		LoginModel loginModel = new LoginModel();
 		model.addAttribute(loginModel);
 		return "login";
@@ -39,11 +39,19 @@ public class HomeController {
 	@PostMapping("/doLogin")
 	public String printLogin(@Valid LoginModel login, BindingResult bindingResult, Model model) {
 		
+		
 		// Check for validation errors
-				if(bindingResult.hasErrors()) {
-					model.addAttribute("title", "Login Form");
-					return "login";
-				}
+		if(bindingResult.hasErrors()) {
+			model.addAttribute("title", "Login Form");
+			return "login";
+		}
+		if(!login.getPassword().equals("password")) {
+			model.addAttribute("title", "Login Form");
+			bindingResult.rejectValue("password", "wrong.password", "Incorrect Password or Username");
+			
+			return "login";
+		}
+		
 		model.addAttribute("message", "Welcome to The Blog Who Cried Wolf!");
 		return "home";
 	}
