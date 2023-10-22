@@ -13,7 +13,7 @@
        <h2 th:text="${message}" style="margin-left: 3.5%">This is my default text</h2> <br/>
        
        <form action="#" th:action="@{/createBlog}" th:object="${blogModel}" method="post">
-			<table>
+			<table class="custom-table">
 				<tr> 
 					<td>Title:</td><td><input type="text" th:field="*{title}"></td><td><h5 style="color:#BF2237" th:if="${#fields.hasErrors('title')}" th:errors="*{title}">Title Error</h5></td>
 				</tr>
@@ -29,7 +29,7 @@
 				<tr> 
 					<td>Date:</td><td><input type="text" th:field="*{date}" ></td><td><h5 style="color:#BF2237" th:if="${#fields.hasErrors('date')}" th:errors="*{date}">Date Error</h5></td> 
 				<tr>
-			    	<td colspan="2"><input type="submit" value="Submit" / style="margin-left: 50%"></td>
+			    	<td colspan="2"><input type="submit" class="btn btn-light" value="Submit" / style="margin-left: 50%"></td>
 				</tr> 
 			</table>
 			<div th:if="${#fields.hasErrors('*')}">List of Errors</div>

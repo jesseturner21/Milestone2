@@ -9,30 +9,30 @@
 	       <form action="#" th:action="@{/doSignUp}" th:object="${signUpModel}" method="post">
 				<table class="custom-table">
 					<tr> 
-						<td style="color:#ECBA82">New User Name:</td><td><input type="text" th:field="*{username}" ></td><td><h5 style="color:red" th:if="${#fields.hasErrors('username')}" th:errors="*{username}">User Name Error</h5></td> 
+						<td>New User Name:</td><td><input type="text" th:field="*{username}" ></td><td><h5 style="color:BF2237" th:if="${#fields.hasErrors('username')}" th:errors="*{username}">User Name Error</h5></td> 
 					</tr> <br/>
 					<tr>
-						<td style="color:#ECBA82">Password:</td><td><input type="password" th:field="*{password}" ></td><td><h5 style="color:red" th:if="${#fields.hasErrors('password')}" th:errors="*{password}">Password Error</h5></td>
+						<td>Password:</td><td><input type="password" th:field="*{password}" ></td><td><h5 style="color:BF2237" th:if="${#fields.hasErrors('password')}" th:errors="*{password}">Password Error</h5></td>
 					</tr>
 					<tr>
-						<td style="color:#ECBA82">First Name:</td><td><input type="text" th:field="*{firstName}" ></td><td><h5 style="color:red" th:if="${#fields.hasErrors('firstName')}" th:errors="*{firstName}">First Name Error</h5></td>
+						<td>First Name:</td><td><input type="text" th:field="*{firstName}" ></td><td><h5 style="color:BF2237" th:if="${#fields.hasErrors('firstName')}" th:errors="*{firstName}">First Name Error</h5></td>
 					</tr>
 					<tr>
-						<td style="color:#ECBA82">Last Name:</td><td><input type="text" th:field="*{lastName}" ></td><td><h5 style="color:red" th:if="${#fields.hasErrors('lastName')}" th:errors="*{lastName}">Last Name Error</h5></td>
+						<td>Last Name:</td><td><input type="text" th:field="*{lastName}" ></td><td><h5 style="color:BF2237" th:if="${#fields.hasErrors('lastName')}" th:errors="*{lastName}">Last Name Error</h5></td>
 					</tr>
 					<tr>
-						<td style="color:#ECBA82">Email:</td><td><input type="text" th:field="*{email}" ></td><td><h5 style="color:red" th:if="${#fields.hasErrors('email')}" th:errors="*{email}">Email Error</h5></td>
+						<td>Email:</td><td><input type="text" th:field="*{email}" ></td><td><h5 style="color:BF2237" th:if="${#fields.hasErrors('email')}" th:errors="*{email}">Email Error</h5></td>
 					</tr>	
 					<tr>
-						<td style="color:#ECBA82">Phone Number:</td><td><input type="text" th:field="*{phoneNumber}" ></td><td><h5 style="color:red" th:if="${#fields.hasErrors('phoneNumber')}" th:errors="*{phoneNumber}">Phone Number Error</h5></td>
+						<td>Phone Number:</td><td><input type="text" th:field="*{phoneNumber}" ></td><td><h5 style="color:BF2237" th:if="${#fields.hasErrors('phoneNumber')}" th:errors="*{phoneNumber}">Phone Number Error</h5></td>
 					</tr>	
 					<tr>
 						<td colspan="2" style="text-align:center"><button type="submit" class="btn btn-light">Submit</button></td>
 					</tr> 
 				</table>
-				<div th:if="${#fields.hasErrors('*')}" style="color:red">List of Errors</div>
+				<div th:if="${#fields.hasErrors('*')}">List of Errors</div>
 				<div th:each="err : ${#fields.errors('*')}">
-					<span style="color:red" th:text="${err}" class="fieldError"></span>
+					<span style="color:#BF2237" th:text="${err}" class="fieldError"></span>
 				</div>
 			</form>
 	

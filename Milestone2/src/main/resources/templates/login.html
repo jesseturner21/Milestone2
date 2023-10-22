@@ -11,7 +11,7 @@
        <h2 th:text="${message}">This is my default text</h2> <br/>
        
        <form action="#" th:action="@{doLogin}" th:object="${loginModel}" method="post">
-			<table>
+			<table class="custom-table">
 				<tr> 
 					<td>User Name:</td><td><input type="text" th:field="*{username}" ></td><td><h5 style="color:BF2237" th:if="${#fields.hasErrors('username')}" th:errors="*{username}">User Name Error</h5></td>
 				</tr>
@@ -19,7 +19,7 @@
 					<td>Password:</td><td><input type="password" th:field="*{password}" ></td><td><h5 style="color:BF2237" th:if="${#fields.hasErrors('password')}" th:errors="*{password}">Password Error</h5></td>
 				</tr>	
 				<tr>
-					<td colspan="2"><input type="submit" value="Submit" style="margin-left: 50%" ></td>
+					<td colspan="2"><input type="submit" class="btn btn-light" value="Submit" style="margin-left: 50%" ></td>
 				</tr> 
 			</table>
 			<div th:if="${#fields.hasErrors('*')}">List of Errors</div>
