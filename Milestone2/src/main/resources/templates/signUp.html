@@ -1,45 +1,38 @@
 <!DOCTYPE html>
 <html xmlns:th="http://thymeleaf.org" xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout" layout:decorate="layouts/defaultTemplate">
 
-  <head>
-    <meta charset="UTF-8">
-
-    <title>Sign Up</title>
-    <link rel="stylesheet" href="./style.css">
-    <link rel="icon" href="./favicon.ico" type="image/x-icon">
-  </head>
   <body>
   	<div layout:fragment="content">
+
 	    <main>
-	       <h2 th:text="${message}">This is my default text</h2> <br/>
 	       
 	       <form action="#" th:action="@{/doSignUp}" th:object="${signUpModel}" method="post">
-				<table>
+				<table class="custom-table">
 					<tr> 
-						<td>New User Name:</td><td><input type="text" th:field="*{username}" ></td><td><h5 style="color:red" th:if="${#fields.hasErrors('username')}" th:errors="*{username}">User Name Error</h5></td>
+						<td>New User Name:</td><td><input type="text" th:field="*{username}" ></td><td><h5 style="color:BF2237" th:if="${#fields.hasErrors('username')}" th:errors="*{username}">User Name Error</h5></td> 
+					</tr> <br/>
+					<tr>
+						<td>Password:</td><td><input type="password" th:field="*{password}" ></td><td><h5 style="color:BF2237" th:if="${#fields.hasErrors('password')}" th:errors="*{password}">Password Error</h5></td>
 					</tr>
 					<tr>
-						<td>Password:</td><td><input type="password" th:field="*{password}" ></td><td><h5 style="color:red" th:if="${#fields.hasErrors('password')}" th:errors="*{password}">Password Error</h5></td>
+						<td>First Name:</td><td><input type="text" th:field="*{firstName}" ></td><td><h5 style="color:BF2237" th:if="${#fields.hasErrors('firstName')}" th:errors="*{firstName}">First Name Error</h5></td>
 					</tr>
 					<tr>
-						<td>First Name:</td><td><input type="text" th:field="*{firstName}" ></td><td><h5 style="color:red" th:if="${#fields.hasErrors('firstName')}" th:errors="*{firstName}">First Name Error</h5></td>
+						<td>Last Name:</td><td><input type="text" th:field="*{lastName}" ></td><td><h5 style="color:BF2237" th:if="${#fields.hasErrors('lastName')}" th:errors="*{lastName}">Last Name Error</h5></td>
 					</tr>
 					<tr>
-						<td>Last Name:</td><td><input type="text" th:field="*{lastName}" ></td><td><h5 style="color:red" th:if="${#fields.hasErrors('lastName')}" th:errors="*{lastName}">Last Name Error</h5></td>
-					</tr>
-					<tr>
-						<td>Email:</td><td><input type="text" th:field="*{email}" ></td><td><h5 style="color:red" th:if="${#fields.hasErrors('email')}" th:errors="*{email}">Email Error</h5></td>
+						<td>Email:</td><td><input type="text" th:field="*{email}" ></td><td><h5 style="color:BF2237" th:if="${#fields.hasErrors('email')}" th:errors="*{email}">Email Error</h5></td>
 					</tr>	
 					<tr>
-						<td>Phone Number:</td><td><input type="text" th:field="*{phoneNumber}" ></td><td><h5 style="color:red" th:if="${#fields.hasErrors('phoneNumber')}" th:errors="*{phoneNumber}">Phone Number Error</h5></td>
+						<td>Phone Number:</td><td><input type="text" th:field="*{phoneNumber}" ></td><td><h5 style="color:BF2237" th:if="${#fields.hasErrors('phoneNumber')}" th:errors="*{phoneNumber}">Phone Number Error</h5></td>
 					</tr>	
 					<tr>
-						<td colspan="2"><input type="submit" value="Submit" /></td>
+						<td colspan="2" style="text-align:center"><button type="submit" class="btn btn-light">Submit</button></td>
 					</tr> 
 				</table>
 				<div th:if="${#fields.hasErrors('*')}">List of Errors</div>
 				<div th:each="err : ${#fields.errors('*')}">
-					<span style="color:red" th:text="${err}" class="fieldError"></span>
+					<span style="color:#BF2237" th:text="${err}" class="fieldError"></span>
 				</div>
 			</form>
 	
