@@ -1,0 +1,18 @@
+body{
+	background-color:#5B9A85;/*#008D76;/*#52AA8A; #204E4A;*/
+}
+h1{
+	color:#ECBA82;
+}
+nav{
+	background-color: #297045;
+
+}
+.navbar-brand,.nav-link{
+	color:#ECBA82;
+}
+
+.custom-table td {
+  padding: 10px; /* Creates spacing within table data cells */
+}
+

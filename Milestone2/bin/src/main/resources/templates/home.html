@@ -1,0 +1,12 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout" layout:decorate="layouts/defaultTemplate">
+
+	<body>
+		<div layout:fragment="content">
+			<img th:src="@{/images/dogblog2.jpg}" class="img-fluid rounded"/><br/><br/>
+			<h1 th:text="${message}">This is my default text</h2><br/>
+			<h2 th:text="${welcomeUser}">Welcome the user</h2><br/>
+			
+		</div>
+	</body>
+</html>
