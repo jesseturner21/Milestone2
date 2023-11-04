@@ -23,8 +23,11 @@ public class BlogEntity {
 	
 	@Column("DATE")
 	String date;
-
 	
+
+	public BlogEntity() {
+		
+	}
 
 	public BlogEntity(int id, String title, String author, String subtitle, String content, String date) {
 		super();

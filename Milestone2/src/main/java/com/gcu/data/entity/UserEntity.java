@@ -26,6 +26,10 @@ public class UserEntity {
 
 	@Column("PASSWORD")
 	String password;
+	
+	public UserEntity() {
+		
+	}
 
 	public UserEntity(int id, String firstName, String lastName, String email, String phoneNumber, String username,
 			String password) {
