@@ -4,10 +4,10 @@ import org.springframework.data.annotation.Id;
 import org.springframework.data.relational.core.mapping.Column;
 import org.springframework.data.relational.core.mapping.Table;
 
-@Table("USER")
+@Table("USERS")
 public class UserEntity {
 	@Id
-	Long id;
+	int id;
 	
 	@Column("FIRST_NAME")
 	String firstName;
@@ -27,7 +27,7 @@ public class UserEntity {
 	@Column("PASSWORD")
 	String password;
 
-	public UserEntity(Long id, String firstName, String lastName, String email, String phoneNumber, String username,
+	public UserEntity(int id, String firstName, String lastName, String email, String phoneNumber, String username,
 			String password) {
 		super();
 		this.id = id;
@@ -39,11 +39,11 @@ public class UserEntity {
 		this.password = password;
 	}
 
-	public Long getId() {
+	public int getId() {
 		return id;
 	}
 
-	public void setId(Long id) {
+	public void setId(int id) {
 		this.id = id;
 	}
 
