@@ -11,7 +11,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import com.gcu.business.UserServiceInterface;
 import com.gcu.model.LoginModel;
 import com.gcu.model.SignUpModel;
-
+import com.gcu.data.entity.UserEntity;
 import jakarta.validation.Valid;
 
 @Controller
@@ -50,6 +50,16 @@ public class HomeController {
 			model.addAttribute("title", "Login Form");
 			return "login";
 		}
+		//Get user with username
+		UserEntity user = service.getUserByUsername(login.getUsername());
+		// CHECK USERNAME
+		if(user == null) {
+			model.addAttribute("title", "Login Form");
+			bindingResult.rejectValue("username", "wrong.username", "User does not exist");
+			
+			return "login";
+		}
+		// CHECK PASSWORD
 		//if the login password is not equal to the users password send a reject message
 		if(!login.getPassword().equals(service.getUserByUsername(login.getUsername()).getPassword())) {
 			model.addAttribute("title", "Login Form");
