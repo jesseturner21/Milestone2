@@ -9,10 +9,23 @@
 				<thead>
 					<tr>
 						<th style="text-align:center">Blog</th>
+						<tr th:each="blog : ${blogsDomain}">
+						<td style="text-align:center"><h5 th:text="${blog.id}">1</h5></td>
+						</tr>
+					</tr>
+					<tr>
 						<th style="text-align:center">Title</th>
+					</tr>
+					<tr>
 						<th style="text-align:center">Author</th>
+					</tr>
+					<tr>
 						<th style="text-align:center">Subtitle</th>
+					</tr>
+					<tr>
 						<th style="text-align:center">Content</th>
+					</tr>
+					<tr>
 						<th style="text-align:center">Date</th>
 					</tr>
 				</thead>
@@ -22,11 +35,11 @@
 					</tr>
 					<tr th:each="blog : ${blogsDomain}">
 						<td style="text-align:center"><h5 th:text="${blog.id}">1</h5></td>
-						<td style="text-align:center"><h5 th:text="${blog.title}">Title 1</h5></td>
-						<td style="text-align:center"><h5 th:text="${blog.author}">Author 1</h5></td>
-						<td style="text-align:center"><h5 th:text="${blog.subtitle}">Subtitle 1</h5></td>
-						<td style="text-align:center"><h5 th:text="${blog.content}">Content 1</h5></td>
-						<td style="text-align:center"><h5 th:text="${blog.date}">Date 1</h5></td>
+						<td style="text-align:center"><h5 th:text="${blog.title}">title</h5></td>
+						<td style="text-align:center"><h5 th:text="${blog.author}">author</h5></td>
+						<td style="text-align:center"><h5 th:text="${blog.subtitle}">subtitle</h5></td>
+						<td style="text-align:center"><h5 th:text="${blog.content}">content</h5></td>
+						<td style="text-align:center"><h5 th:text="${blog.date}">date</h5></td>
 					</tr>
 				</tbody>
 			</table>
