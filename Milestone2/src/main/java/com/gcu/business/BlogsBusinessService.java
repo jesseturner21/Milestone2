@@ -2,6 +2,7 @@ package com.gcu.business;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -15,6 +16,24 @@ public class BlogsBusinessService implements BlogsBusinessServiceInterface{
 	
 	@Autowired
 	BlogRepository repo;
+
+	
+	@Override
+	public List<BlogEntity> findAll(){
+		List<BlogEntity> blogs = new ArrayList<BlogEntity>();
+		
+		try {
+			Iterable<BlogEntity> blogsIterable = repo.findAll();
+			
+			blogs = new ArrayList<BlogEntity>();
+			blogsIterable.forEach(blogs::add);
+		}
+		catch (Exception e) {
+			e.printStackTrace();
+		}
+		
+		return blogs;
+	}
 	
 	@Override
 	public void test() {
@@ -23,11 +42,17 @@ public class BlogsBusinessService implements BlogsBusinessServiceInterface{
 
 	@Override
 	public List<BlogModel> getBlogs() {
-		// Create some Orders
-		List<BlogModel> orders = new ArrayList<BlogModel>();
+		// Create some Blogs
 		
+		List<BlogEntity> blogsEntity = findAll();
 		
-		return orders;
+		List<BlogModel> blogsDomain = new ArrayList<BlogModel>();
+		
+		for(BlogEntity entity : blogsEntity) {
+			blogsDomain.add(new BlogModel(entity.getId(), entity.getTitle(), entity.getAuthor(), entity.getSubtitle(), entity.getContent(), entity.getDate()));
+		}
+		
+		return blogsDomain;
 	}
 	@Override
 	public BlogEntity createBlog(String title, String author, String subtitle, String content, String date) {
@@ -41,6 +66,5 @@ public class BlogsBusinessService implements BlogsBusinessServiceInterface{
         return repo.save(blog);
         
 	}
-
 	
 }

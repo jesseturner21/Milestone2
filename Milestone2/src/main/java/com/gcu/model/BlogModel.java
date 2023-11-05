@@ -6,6 +6,8 @@ import jakarta.validation.constraints.Size;
 
 public class BlogModel {
 	
+	private int id;
+	
 	@NotNull(message="Title is a required field")
 	@Size(min=1, message="Title must have at least one character")
 	private String title;
@@ -30,17 +32,26 @@ public class BlogModel {
 		// default constructor
 	}
 
-	public BlogModel(@NotNull(message = "Title is a required field") String title,
+	public BlogModel(int id, @NotNull(message = "Title is a required field") String title,
 			@NotNull(message = "Subtitle is a required field") String subtitle,
 			@NotNull(message = "Content is a required field") String content,
 			@NotNull(message = "Author is a required field") String author,
 			@NotNull(message = "Date is a required field") String date) {
 		super();
+		this.id = id;
 		this.title = title;
 		this.subtitle = subtitle;
 		this.content = content;
 		this.author = author;
 		this.date = date;
+	}
+	
+	public int getId() {
+		return id;
+	}
+	
+	public void setId(int id) {
+		this.id = id;
 	}
 
 	public String getTitle() {

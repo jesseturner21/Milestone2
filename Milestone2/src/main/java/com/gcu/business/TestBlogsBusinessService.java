@@ -27,4 +27,10 @@ public class TestBlogsBusinessService implements BlogsBusinessServiceInterface{
 		// TODO Auto-generated method stub
 		return null;
 	}
+
+	@Override
+	public List<BlogEntity> findAll() {
+		// TODO Auto-generated method stub
+		return null;
+	}
 }
