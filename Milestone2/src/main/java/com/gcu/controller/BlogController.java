@@ -47,6 +47,7 @@ public class BlogController {
 		service.createBlog(blog.getTitle(), blog.getAuthor(), blog.getSubtitle(),blog.getContent(), blog.getDate());
 		
 		model.addAttribute("message", "Welcome to The Blog Who Cried Wolf!");
+		model.addAttribute("blogsDomain", service.getBlogs());
 		return "home";
 	}
 
