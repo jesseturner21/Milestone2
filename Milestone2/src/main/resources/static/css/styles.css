@@ -16,3 +16,7 @@ nav{
   padding: 10px; /* Creates spacing within table data cells */
 }
 
+.label {
+  white-space: nowrap; /* Prevent label text from wrapping to the next line */
+}
+

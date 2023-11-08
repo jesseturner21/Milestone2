@@ -1,3 +1,5 @@
+CREATE DATABASE  IF NOT EXISTS `bwcw` /*!40100 DEFAULT CHARACTER SET utf8 */;
+USE `bwcw`;
 -- MySQL dump 10.13  Distrib 8.0.34, for macos13 (arm64)
 --
 -- Host: localhost    Database: bwcw
