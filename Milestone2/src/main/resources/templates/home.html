@@ -27,6 +27,7 @@
 						<td style="text-align:center"><h5 th:text="${blog.subtitle}">Subtitle 1</h5></td>
 						<td style="text-align:center"><h5 th:text="${blog.content}">Content 1</h5></td>
 						<td style="text-align:center"><h5 th:text="${blog.date}">Date 1</h5></td>
+						<a th:href="@{'update/' + ${blog.getId()}}">update</a>
 					</tr>
 				</tbody>
 			</table>

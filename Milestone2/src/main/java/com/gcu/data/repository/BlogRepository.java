@@ -14,4 +14,5 @@ public interface BlogRepository extends CrudRepository<BlogEntity, Long> {
 	@Query(value = "SELECT * FROM BLOGS")
 	public List<BlogEntity> findAll();
 	*/
+	public BlogEntity findById(int id);
 }

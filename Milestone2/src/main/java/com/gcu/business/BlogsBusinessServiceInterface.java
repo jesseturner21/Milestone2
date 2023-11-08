@@ -14,4 +14,6 @@ public interface BlogsBusinessServiceInterface {
 	public BlogEntity createBlog(String title, String author, String subtitle, String content, String date);
 
 	public List<BlogEntity> findAll();
+	public BlogEntity findById(int id);
+	boolean updateById();
 }
