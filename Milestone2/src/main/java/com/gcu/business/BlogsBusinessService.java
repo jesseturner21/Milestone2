@@ -49,7 +49,7 @@ public class BlogsBusinessService implements BlogsBusinessServiceInterface{
 		List<BlogModel> blogsDomain = new ArrayList<BlogModel>();
 		
 		for(BlogEntity entity : blogsEntity) {
-			blogsDomain.add(new BlogModel(entity.getId(), entity.getTitle(), entity.getAuthor(), entity.getSubtitle(), entity.getContent(), entity.getDate()));
+			blogsDomain.add(new BlogModel(entity.getId(), entity.getTitle(), entity.getSubtitle(),  entity.getContent(), entity.getAuthor(), entity.getDate()));
 		}
 		
 		return blogsDomain;
