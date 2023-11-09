@@ -21,6 +21,4 @@ public class UserService implements UserServiceInterface{
 		
 		return orders;
 	}
-	
-	
 }
