@@ -26,6 +26,8 @@
 					<span style="font-size: 12px;" th:text="${blog.author}"></span></br>
 					<span style="font-size: 12px;" th:text="${blog.date}"></span></br>
 					</br>
+					<a class="btn btn-secondary" th:href="@{'update/' + ${blog.getId()}}">Update</a>
+					<a class="btn btn-secondary" th:href="@{'delete/' + ${blog.getId()}}">Delete</a>
 				</li>
 			</ul>
 
