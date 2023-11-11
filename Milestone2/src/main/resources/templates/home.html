@@ -2,6 +2,7 @@
 <html xmlns:th="http://www.thymeleaf.org" xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout" layout:decorate="layouts/defaultTemplate">
 <head>
 	<meta charset="UTF-8">
+	<base href="/">
 	<style>
         ul {
             list-style-type: none; /* Remove bullet points */
@@ -25,8 +26,8 @@
 					<span style="font-size: 12px;" th:text="${blog.author}"></span></br>
 					<span style="font-size: 12px;" th:text="${blog.date}"></span></br>
 					</br>
-					<a class="btn btn-secondary" style="color:#ECBA82; background-color:#297045; border-color:#297045" th:href="@{'update/' + ${blog.getId()}}">Update</a>
-					<a class="btn btn-secondary" style="color:#ECBA82; background-color:#297045; border-color:#297045" th:href="@{'delete/' + ${blog.getId()}}">Delete</a> <!-- btn btn-secondary -->
+					<a class="btn btn-secondary" style="color:#ECBA82; background-color:#297045; border-color:#297045" th:href="@{'/update/' + ${blog.getId()}}">Update</a>
+					<a class="btn btn-secondary" style="color:#ECBA82; background-color:#297045; border-color:#297045" th:href="@{'/delete/' + ${blog.getId()}}">Delete</a> <!-- btn btn-secondary -->
 					</br>
 					<span> </span></br>
 				</li>

@@ -68,6 +68,19 @@ public class BlogsBusinessService implements BlogsBusinessServiceInterface{
         
 	}
 	@Override
+	public BlogEntity updateBlog(BlogModel blogModel) {
+		
+        BlogEntity blog = repo.findById((long)blogModel.getId()).orElse(null);
+        blog.setTitle(blogModel.getTitle());
+        blog.setAuthor(blogModel.getAuthor());
+        blog.setSubtitle(blogModel.getSubtitle());
+        blog.setContent(blogModel.getContent());
+        blog.setDate(blogModel.getDate());
+        
+        return repo.save(blog);
+        
+	}
+	@Override
 	public void deleteById(int id) {
 		repo.deleteById((long)id);
 	}

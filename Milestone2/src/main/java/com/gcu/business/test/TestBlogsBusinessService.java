@@ -46,4 +46,10 @@ public class TestBlogsBusinessService implements BlogsBusinessServiceInterface{
 		// TODO Auto-generated method stub
 		return null;
 	}
+
+	@Override
+	public BlogEntity updateBlog(BlogModel blogModel) {
+		// TODO Auto-generated method stub
+		return null;
+	}
 }

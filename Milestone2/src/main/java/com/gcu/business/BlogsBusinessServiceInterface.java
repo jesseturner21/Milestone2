@@ -18,4 +18,5 @@ public interface BlogsBusinessServiceInterface {
 	BlogEntity findById(int id);
 
 	public void deleteById(int id);
+	BlogEntity updateBlog(BlogModel blogModel);
 }
