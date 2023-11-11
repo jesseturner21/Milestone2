@@ -1,8 +1,9 @@
-package com.gcu.business;
+package com.gcu.business.test;
 
 import java.util.ArrayList;
 import java.util.List;
 
+import com.gcu.business.UserServiceInterface;
 import com.gcu.data.entity.UserEntity;
 import com.gcu.model.BlogModel;
 import com.gcu.model.SignUpModel;

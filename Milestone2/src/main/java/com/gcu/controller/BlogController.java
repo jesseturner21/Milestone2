@@ -5,6 +5,7 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 
@@ -49,6 +50,15 @@ public class BlogController {
 		model.addAttribute("message", "Welcome to The Blog Who Cried Wolf!");
 		model.addAttribute("blogsDomain", service.getBlogs());
 		return "home";
+	}
+	
+	@GetMapping("/delete/{id}")
+	public String deleteBlog(Model model, @PathVariable("id") int id) {
+		service.deleteById(id);
+		model.addAttribute("message", "Welcome to The Blog Who Cried Wolf!");
+		model.addAttribute("blogsDomain", service.getBlogs());
+		return "home";
+		
 	}
 
 }
