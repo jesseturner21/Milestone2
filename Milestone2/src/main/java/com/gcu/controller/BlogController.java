@@ -68,6 +68,16 @@ public class BlogController {
 		model.addAttribute(blogModel);
 		
 		return "blog";
+		
+	}
+
+	@GetMapping("/delete/{id}")
+	public String deleteBlog(Model model, @PathVariable("id") int id) {
+		service.deleteById(id);
+		model.addAttribute("message", "Welcome to The Blog Who Cried Wolf!");
+		model.addAttribute("blogsDomain", service.getBlogs());
+		return "home";
+		
 	}
 
 }
