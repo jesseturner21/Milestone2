@@ -40,4 +40,10 @@ public class TestBlogsBusinessService implements BlogsBusinessServiceInterface{
 		// TODO Auto-generated method stub
 		
 	}
+
+	@Override
+	public BlogEntity findById(int id) {
+		// TODO Auto-generated method stub
+		return null;
+	}
 }
