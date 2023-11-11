@@ -45,9 +45,14 @@ public class BlogController {
 			return "blog";
 
 		}
-		
-		service.createBlog(blog.getTitle(), blog.getAuthor(), blog.getSubtitle(),blog.getContent(), blog.getDate());
-		
+		if(blog.getId() == 0) {
+
+			service.createBlog(blog.getTitle(), blog.getAuthor(), blog.getSubtitle(),blog.getContent(), blog.getDate());
+			
+		}
+		else {
+			service.updateBlog(blog);
+		}
 		model.addAttribute("message", "Welcome to The Blog Who Cried Wolf!");
 		model.addAttribute("blogsDomain", service.getBlogs());
 		return "home";
@@ -55,7 +60,6 @@ public class BlogController {
 	
 	@GetMapping("/update/{id}")
 	public String displayUpdateBlog(Model model, @PathVariable("id") int id) {
-		System.out.println(id);
 		BlogEntity blog = service.findById(id);
 		BlogModel blogModel = new BlogModel();
 		blogModel.setId(blog.getId());
