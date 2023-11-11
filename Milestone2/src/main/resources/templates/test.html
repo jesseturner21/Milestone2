@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout" layout:decorate="layouts/defaultTemplate">
+	<body>
+		<div layout:fragment="content">
+			<!--<img th:src="@{/images/dogblog2.jpg}" class="img-fluid rounded"/><br/><br/>-->
+			<h1 th:text="${message}">This is my default text</h1><br/>
+			<img th:src="@{/images/dogblog2.jpg}" class="img-fluid rounded"/><br/><br/>
+			<table style="width:50%">
+				<thead>
+					<tr>
+						<th style="text-align:center">Blog</th>
+						<tr th:each="blog : ${blogsDomain}">
+						<td style="text-align:center"><h5 th:text="${blog.id}">1</h5></td>
+						</tr>
+					</tr>
+					<tr>
+						<th style="text-align:center">Title</th>
+					</tr>
+					<tr>
+						<th style="text-align:center">Author</th>
+					</tr>
+					<tr>
+						<th style="text-align:center">Subtitle</th>
+					</tr>
+					<tr>
+						<th style="text-align:center">Content</th>
+					</tr>
+					<tr>
+						<th style="text-align:center">Date</th>
+					</tr>
+				</thead>
+				<tbody>
+					<tr th:if="${blogsDomain.empty}">
+						<td style="text-align:center" colspan="4">No Blogs Available</td>
+					</tr>
+					<tr th:each="blog : ${blogsDomain}">
+						<td style="text-align:center"><h5 th:text="${blog.id}">1</h5></td>
+						<td style="text-align:center"><h5 th:text="${blog.title}">title</h5></td>
+						<td style="text-align:center"><h5 th:text="${blog.author}">author</h5></td>
+						<td style="text-align:center"><h5 th:text="${blog.subtitle}">subtitle</h5></td>
+						<td style="text-align:center"><h5 th:text="${blog.content}">content</h5></td>
+						<td style="text-align:center"><h5 th:text="${blog.date}">date</h5></td>
+					</tr>
+				</tbody>
+			</table>
+		</div>
+	</body>
+</html>

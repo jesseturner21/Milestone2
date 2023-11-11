@@ -9,7 +9,5 @@ import com.gcu.data.entity.BlogEntity;
 
 public interface BlogRepository extends CrudRepository<BlogEntity, Long> {
 	
-	@Override
-	@Query(value = "SELECT * FROM BLOGS")
-	public List<BlogEntity> findAll();
+
 }

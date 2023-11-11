@@ -1,17 +1,24 @@
 package com.gcu.controller;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
+
+import com.gcu.business.BlogsBusinessService;
+import com.gcu.business.BlogsBusinessServiceInterface;
 import com.gcu.model.BlogModel;
 import jakarta.validation.Valid;
 
 @Controller
 @RequestMapping("/")
 public class BlogController {
+	
+	@Autowired 
+	BlogsBusinessServiceInterface service;
 	
 	// displays the create blog page form
 	@GetMapping("/blog")
@@ -36,7 +43,11 @@ public class BlogController {
 			return "blog";
 
 		}
+		
+		service.createBlog(blog.getTitle(), blog.getAuthor(), blog.getSubtitle(),blog.getContent(), blog.getDate());
+		
 		model.addAttribute("message", "Welcome to The Blog Who Cried Wolf!");
+		model.addAttribute("blogsDomain", service.getBlogs());
 		return "home";
 	}
 

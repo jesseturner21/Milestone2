@@ -3,6 +3,7 @@ package com.gcu.business;
 import java.util.ArrayList;
 import java.util.List;
 
+import com.gcu.data.entity.BlogEntity;
 import com.gcu.model.BlogModel;
 
 public class TestBlogsBusinessService implements BlogsBusinessServiceInterface{
@@ -19,5 +20,17 @@ public class TestBlogsBusinessService implements BlogsBusinessServiceInterface{
 		
 		
 		return orders;
+	}
+
+	@Override
+	public BlogEntity createBlog(String title, String author, String subtitle, String content, String date) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public List<BlogEntity> findAll() {
+		// TODO Auto-generated method stub
+		return null;
 	}
 }

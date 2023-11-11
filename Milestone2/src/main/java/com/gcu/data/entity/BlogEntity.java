@@ -4,10 +4,10 @@ import org.springframework.data.annotation.Id;
 import org.springframework.data.relational.core.mapping.Column;
 import org.springframework.data.relational.core.mapping.Table;
 
-@Table("BLOG")
+@Table("BLOGS")
 public class BlogEntity {
 	@Id
-	Long id;
+	int id;
 	
 	@Column("TITLE")
 	String title;
@@ -23,10 +23,13 @@ public class BlogEntity {
 	
 	@Column("DATE")
 	String date;
-
 	
 
-	public BlogEntity(Long id, String title, String author, String subtitle, String content, String date) {
+	public BlogEntity() {
+		
+	}
+
+	public BlogEntity(int id, String title, String author, String subtitle, String content, String date) {
 		super();
 		this.id = id;
 		this.title = title;
@@ -38,13 +41,13 @@ public class BlogEntity {
 
 
 
-	public Long getId() {
+	public int getId() {
 		return id;
 	}
 
 
 
-	public void setId(Long id) {
+	public void setId(int id) {
 		this.id = id;
 	}
 
