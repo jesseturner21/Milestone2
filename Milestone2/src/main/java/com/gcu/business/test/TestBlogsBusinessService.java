@@ -1,8 +1,9 @@
-package com.gcu.business;
+package com.gcu.business.test;
 
 import java.util.ArrayList;
 import java.util.List;
 
+import com.gcu.business.BlogsBusinessServiceInterface;
 import com.gcu.data.entity.BlogEntity;
 import com.gcu.model.BlogModel;
 
@@ -32,5 +33,11 @@ public class TestBlogsBusinessService implements BlogsBusinessServiceInterface{
 	public List<BlogEntity> findAll() {
 		// TODO Auto-generated method stub
 		return null;
+	}
+
+	@Override
+	public void deleteById(int id) {
+		// TODO Auto-generated method stub
+		
 	}
 }

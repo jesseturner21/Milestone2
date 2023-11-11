@@ -67,5 +67,9 @@ public class BlogsBusinessService implements BlogsBusinessServiceInterface{
         return repo.save(blog);
         
 	}
+	@Override
+	public void deleteById(int id) {
+		repo.deleteById((long)id);
+	}
 	
 }
