@@ -11,6 +11,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 
 import com.gcu.business.BlogsBusinessService;
 import com.gcu.business.BlogsBusinessServiceInterface;
+import com.gcu.data.entity.BlogEntity;
 import com.gcu.model.BlogModel;
 import jakarta.validation.Valid;
 
@@ -52,6 +53,24 @@ public class BlogController {
 		return "home";
 	}
 	
+	@GetMapping("/update/{id}")
+	public String displayUpdateBlog(Model model, @PathVariable("id") int id) {
+		System.out.println(id);
+		BlogEntity blog = service.findById(id);
+		BlogModel blogModel = new BlogModel();
+		blogModel.setId(blog.getId());
+		blogModel.setAuthor(blog.getAuthor());
+		blogModel.setContent(blog.getContent());
+		blogModel.setSubtitle(blog.getSubtitle());
+		blogModel.setDate(blog.getDate());
+		blogModel.setTitle(blog.getTitle());
+		model.addAttribute("message", "Update Blog");
+		model.addAttribute(blogModel);
+		
+		return "blog";
+		
+	}
+
 	@GetMapping("/delete/{id}")
 	public String deleteBlog(Model model, @PathVariable("id") int id) {
 		service.deleteById(id);

@@ -13,7 +13,7 @@
 	<body>
 		<div align="center">
 			<!-- Insert Header Fragment -->
-			<div th:replace="layouts/common :: header">My Header</div>
+			<div th:replace="~{layouts/common :: header}">My Header</div> <!-- "layouts/common :: header" -->
 			
 			<!-- Main Body Content -->
 			<section layout:fragment="content">
@@ -21,7 +21,7 @@
 			</section>
 			
 			<!-- Insert Footer Fragment -->
-			<div th:replace="layouts/common :: footer">My Footer</div>
+			<div th:replace="~{layouts/common :: footer}">My Footer</div> <!--"layouts/common :: footer" -->
 		</div>
 	</body>
 </html>

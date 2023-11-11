@@ -72,4 +72,8 @@ public class BlogsBusinessService implements BlogsBusinessServiceInterface{
 		repo.deleteById((long)id);
 	}
 	
+	@Override
+	public BlogEntity findById(int id) {
+		return repo.findById((long)id).orElse(null);
+	}
 }

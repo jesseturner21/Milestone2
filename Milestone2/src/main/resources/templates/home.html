@@ -25,8 +25,10 @@
 					<span style="font-size: 12px;" th:text="${blog.author}"></span></br>
 					<span style="font-size: 12px;" th:text="${blog.date}"></span></br>
 					</br>
-					<a class="btn btn-secondary" th:href="@{'update/' + ${blog.getId()}}">Update</a>
-					<a class="btn btn-secondary" th:href="@{'delete/' + ${blog.getId()}}">Delete</a>
+					<a class="btn btn-secondary" style="color:#ECBA82; background-color:#297045; border-color:#297045" th:href="@{'update/' + ${blog.getId()}}">Update</a>
+					<a class="btn btn-secondary" style="color:#ECBA82; background-color:#297045; border-color:#297045" th:href="@{'delete/' + ${blog.getId()}}">Delete</a> <!-- btn btn-secondary -->
+					</br>
+					<span> </span></br>
 				</li>
 			</ul>
 		</div>
