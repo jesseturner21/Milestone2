@@ -68,6 +68,7 @@ public class BlogsBusinessService implements BlogsBusinessServiceInterface{
         
 	}
 	@Override
+
 	public BlogEntity updateBlog(BlogModel blogModel) {
 		
         BlogEntity blog = repo.findById((long)blogModel.getId()).orElse(null);
@@ -83,6 +84,7 @@ public class BlogsBusinessService implements BlogsBusinessServiceInterface{
 	@Override
 	public void deleteById(int id) {
 		repo.deleteById((long)id);
+
 	}
 	
 	@Override

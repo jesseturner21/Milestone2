@@ -15,8 +15,10 @@ public interface BlogsBusinessServiceInterface {
 
 	public List<BlogEntity> findAll();
 
+
 	BlogEntity findById(int id);
 
 	public void deleteById(int id);
 	BlogEntity updateBlog(BlogModel blogModel);
+
 }

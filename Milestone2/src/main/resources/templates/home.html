@@ -13,6 +13,7 @@
 			<!--<img th:src="@{/images/dogblog2.jpg}" class="img-fluid rounded"/><br/><br/>-->
 			<h1 th:text="${message}">This is my default text</h1><br/>
 			<img th:src="@{/images/dogblog2.jpg}" class="img-fluid rounded"/><br/><br/>
+
 			
 			<ul>
 				<li th:if="${blogsDomain.empty}">
@@ -32,6 +33,7 @@
 					<span> </span></br>
 				</li>
 			</ul>
+
 		</div>
 	</body>
 </html>
