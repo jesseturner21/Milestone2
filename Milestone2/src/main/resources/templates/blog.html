@@ -15,6 +15,9 @@
        <form action="#" th:action="@{/createBlog}" th:object="${blogModel}" method="post">
 			<table class="custom-table">
 				<tr> 
+					<td><input type="hidden" th:field="*{id}"></td>
+				</tr>
+				<tr> 
 					<td>Title:</td><td><input type="text" th:field="*{title}"></td><td><h5 style="color:#BF2237" th:if="${#fields.hasErrors('title')}" th:errors="*{title}">Title Error</h5></td>
 				</tr>
 				<tr>

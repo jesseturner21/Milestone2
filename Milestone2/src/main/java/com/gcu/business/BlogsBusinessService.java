@@ -68,26 +68,27 @@ public class BlogsBusinessService implements BlogsBusinessServiceInterface{
         
 	}
 	@Override
-	public BlogEntity findById(int id) {
-		return repo.findById((long) id).orElse(null);
-	}
-//	@Override
-//	public boolean updateById(int id) {
-//		try {
-//                // Save method updates the existing order with the same ID
-//                repo.save(blog);
-//                return true; // The update was successful
-//           
-//        } catch (Exception e) {
-//            e.printStackTrace(); // Handle exceptions more gracefully in a production environment
-//        }
-//        return false; // The update failed
-//    }
 
+	public BlogEntity updateBlog(BlogModel blogModel) {
+		
+        BlogEntity blog = repo.findById((long)blogModel.getId()).orElse(null);
+        blog.setTitle(blogModel.getTitle());
+        blog.setAuthor(blogModel.getAuthor());
+        blog.setSubtitle(blogModel.getSubtitle());
+        blog.setContent(blogModel.getContent());
+        blog.setDate(blogModel.getDate());
+        
+        return repo.save(blog);
+        
+	}
 	@Override
-	public boolean updateById() {
-		// TODO Auto-generated method stub
-		return false;
+	public void deleteById(int id) {
+		repo.deleteById((long)id);
+
 	}
 	
+	@Override
+	public BlogEntity findById(int id) {
+		return repo.findById((long)id).orElse(null);
+	}
 }
