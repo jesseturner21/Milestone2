@@ -2,16 +2,14 @@ package com.gcu.business;
 
 import java.util.ArrayList;
 import java.util.List;
-
 import org.springframework.beans.factory.annotation.Autowired;
-
-import com.gcu.data.entity.BlogEntity;
+import org.springframework.stereotype.Service;
 import com.gcu.data.entity.UserEntity;
 import com.gcu.data.repository.UserRepository;
-import com.gcu.model.BlogModel;
 import com.gcu.model.SignUpModel;
 
-public class UserService implements UserServiceInterface{
+@Service
+public class UserService implements UserServiceInterface {
 
 	
 	@Autowired 
@@ -48,6 +46,7 @@ public class UserService implements UserServiceInterface{
 	
 	public UserEntity getUserByUsername(String username) {
 		return repo.findUserByUsername(username);
+		
 	}
 	
 	
