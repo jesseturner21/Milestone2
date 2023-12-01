@@ -17,10 +17,6 @@ public class SpringConfig {
 		return new BlogsBusinessService();
 	}
 	
-	@Primary
-	@Bean(name="userBusinessService")
-	public UserServiceInterface getUserBuisiness() {
-		return new UserService();
-	}
+
 	
 }
