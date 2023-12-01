@@ -15,9 +15,5 @@ public class SpringConfig {
 		return new BlogsBusinessService();
 	}
 	
-	@Bean(name="userBusinessService")
-	public UserServiceInterface getUserBuisiness() {
-		return new UserService();
-	}
 	
 }

@@ -12,6 +12,7 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 
 import com.gcu.business.BlogsBusinessServiceInterface;
+import com.gcu.business.UserService;
 import com.gcu.business.UserServiceInterface;
 import com.gcu.model.BlogModel;
 import com.gcu.model.LoginModel;
@@ -24,7 +25,7 @@ import jakarta.validation.Valid;
 public class HomeController {
 	
 	@Autowired 
-	UserServiceInterface service;
+	UserService service;
 	
 	@Autowired
 	private BlogsBusinessServiceInterface blogs;
