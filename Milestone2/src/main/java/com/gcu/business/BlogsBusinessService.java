@@ -69,7 +69,7 @@ public class BlogsBusinessService implements BlogsBusinessServiceInterface{
 	}
 	@Override
 	public BlogEntity findById(int id) {
-		return repo.findById(id);
+		return repo.findById((long) id).orElse(null);
 	}
 //	@Override
 //	public boolean updateById(int id) {
