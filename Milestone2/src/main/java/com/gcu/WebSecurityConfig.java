@@ -19,14 +19,14 @@ public class WebSecurityConfig {
 	http 
 		.csrf(csrf -> csrf.disable())
 		.authorizeHttpRequests(auth -> auth
-				.requestMatchers("/" , "/signUp","/images/**", "/service/**").permitAll()
+				.requestMatchers("/" , "/signUp", "doSignUp","/images/**", "/service/**").permitAll()
 				.anyRequest().authenticated ())
 	.formLogin(form -> form
 			.loginPage("/login" )
 			.usernameParameter("username")
 			.passwordParameter("password")
 			.permitAll()
-			.defaultSuccessUrl("/orders/display", true)) 
+			.defaultSuccessUrl("/", true)) 
 	.logout (lo -> lo
 			.logoutUrl("/logout")
 			.invalidateHttpSession(true)
