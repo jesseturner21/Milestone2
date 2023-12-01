@@ -67,7 +67,7 @@ public class BlogsBusinessService implements BlogsBusinessServiceInterface{
         return repo.save(blog);
         
 	}
-	@Override
+
 
 	public BlogEntity updateBlog(BlogModel blogModel) {
 		

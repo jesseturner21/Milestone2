@@ -2,6 +2,8 @@ package com.gcu;
 
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
+import org.springframework.context.annotation.Primary;
+
 import com.gcu.business.BlogsBusinessService;
 import com.gcu.business.BlogsBusinessServiceInterface;
 import com.gcu.business.UserService;
@@ -15,5 +17,6 @@ public class SpringConfig {
 		return new BlogsBusinessService();
 	}
 	
+
 	
 }

@@ -2,8 +2,8 @@ package com.gcu.business;
 
 import java.util.ArrayList;
 import java.util.List;
-
 import org.springframework.beans.factory.annotation.Autowired;
+
 import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.authority.SimpleGrantedAuthority;
 import org.springframework.security.core.userdetails.User;
@@ -13,12 +13,14 @@ import org.springframework.security.core.userdetails.UsernameNotFoundException;
 import org.springframework.stereotype.Service;
 
 import com.gcu.data.entity.BlogEntity;
+
 import com.gcu.data.entity.UserEntity;
 import com.gcu.data.repository.UserRepository;
-import com.gcu.model.BlogModel;
 import com.gcu.model.SignUpModel;
+
 @Service
 public class UserService implements UserDetailsService{
+
 
 	
 	@Autowired 
@@ -53,6 +55,7 @@ public class UserService implements UserDetailsService{
 	
 	public UserEntity getUserByUsername(String username) {
 		return repo.findUserByUsername(username);
+		
 	}
 	@Override
 	public UserDetails loadUserByUsername(String username) throws UsernameNotFoundException {
