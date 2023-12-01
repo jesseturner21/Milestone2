@@ -14,6 +14,11 @@ public interface BlogsBusinessServiceInterface {
 	public BlogEntity createBlog(String title, String author, String subtitle, String content, String date);
 
 	public List<BlogEntity> findAll();
-	public BlogEntity findById(int id);
-	boolean updateById();
+
+
+	BlogEntity findById(int id);
+
+	public void deleteById(int id);
+	BlogEntity updateBlog(BlogModel blogModel);
+
 }

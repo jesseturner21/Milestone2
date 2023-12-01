@@ -46,17 +46,21 @@ public class BlogController {
 			return "blog";
 
 		}
-		
-		service.createBlog(blog.getTitle(), blog.getAuthor(), blog.getSubtitle(),blog.getContent(), blog.getDate());
-		
+		if(blog.getId() == 0) {
+
+			service.createBlog(blog.getTitle(), blog.getAuthor(), blog.getSubtitle(),blog.getContent(), blog.getDate());
+			
+		}
+		else {
+			service.updateBlog(blog);
+		}
 		model.addAttribute("message", "Welcome to The Blog Who Cried Wolf!");
 		model.addAttribute("blogsDomain", service.getBlogs());
 		return "home";
 	}
-
+	
 	@GetMapping("/update/{id}")
-	public String displayUpdateBlog(Model model,@PathVariable("id") int id ) {
-		System.out.println(id);
+	public String displayUpdateBlog(Model model, @PathVariable("id") int id) {
 		BlogEntity blog = service.findById(id);
 		BlogModel blogModel = new BlogModel();
 		blogModel.setId(blog.getId());
@@ -68,6 +72,18 @@ public class BlogController {
 		model.addAttribute("message", "Update Blog");
 		model.addAttribute(blogModel);
 		
-	return "blog";
+		return "blog";
+		
 	}
+
+	@GetMapping("/delete/{id}")
+	public String deleteBlog(Model model, @PathVariable("id") int id) {
+		service.deleteById(id);
+		model.addAttribute("message", "Welcome to The Blog Who Cried Wolf!");
+		model.addAttribute("blogsDomain", service.getBlogs());
+		return "home";
+		
+	}
+
+	
 }

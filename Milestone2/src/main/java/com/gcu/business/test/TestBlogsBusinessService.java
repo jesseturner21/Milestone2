@@ -1,8 +1,9 @@
-package com.gcu.business;
+package com.gcu.business.test;
 
 import java.util.ArrayList;
 import java.util.List;
 
+import com.gcu.business.BlogsBusinessServiceInterface;
 import com.gcu.data.entity.BlogEntity;
 import com.gcu.model.BlogModel;
 
@@ -40,9 +41,15 @@ public class TestBlogsBusinessService implements BlogsBusinessServiceInterface{
 		return null;
 	}
 
-	@Override
-	public boolean updateById() {
+
+	public BlogEntity updateBlog(BlogModel blogModel) {
 		// TODO Auto-generated method stub
-		return false;
+		return null;
+	}
+
+	@Override
+	public void deleteById(int id) {
+		// TODO Auto-generated method stub
+		
 	}
 }
