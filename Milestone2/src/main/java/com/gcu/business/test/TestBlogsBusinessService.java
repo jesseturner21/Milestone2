@@ -19,7 +19,6 @@ public class TestBlogsBusinessService implements BlogsBusinessServiceInterface{
 		// Create some Orders
 		List<BlogModel> orders = new ArrayList<BlogModel>();
 		
-		
 		return orders;
 	}
 
@@ -36,29 +35,19 @@ public class TestBlogsBusinessService implements BlogsBusinessServiceInterface{
 	}
 
 	@Override
-<<<<<<< HEAD:Milestone2/src/main/java/com/gcu/business/TestBlogsBusinessService.java
-=======
 	public void deleteById(int id) {
 		// TODO Auto-generated method stub
 		
 	}
 
 	@Override
->>>>>>> master:Milestone2/src/main/java/com/gcu/business/test/TestBlogsBusinessService.java
 	public BlogEntity findById(int id) {
 		// TODO Auto-generated method stub
 		return null;
 	}
 
-	@Override
-<<<<<<< HEAD:Milestone2/src/main/java/com/gcu/business/TestBlogsBusinessService.java
-	public boolean updateById() {
-		// TODO Auto-generated method stub
-		return false;
-=======
 	public BlogEntity updateBlog(BlogModel blogModel) {
 		// TODO Auto-generated method stub
 		return null;
->>>>>>> master:Milestone2/src/main/java/com/gcu/business/test/TestBlogsBusinessService.java
 	}
 }
