@@ -20,7 +20,7 @@
 					<span style="text-align:center" colspan="4">No Blogs Available</span>
 				</li>
 					
-				<li th:each="blog : ${blogsDomain}">
+				<li class="max-width-ex" th:each="blog : ${blogsDomain}">
 					<b><span style="font-size: 20px;" th:text="${blog.title}"></span></b></br>
 					<i><span style="font-size: 17px;" th:text="${blog.subtitle}"></span></i></br>
 					<span style="font-size: 14px;" th:text="${blog.content}"></span></br>
@@ -28,7 +28,7 @@
 					<span style="font-size: 12px;" th:text="${blog.date}"></span></br>
 					</br>
 					<a class="btn btn-secondary" style="color:#ECBA82; background-color:#297045; border-color:#297045" th:href="@{'/update/' + ${blog.getId()}}">Update</a>
-					<a class="btn btn-secondary" style="color:#ECBA82; background-color:#297045; border-color:#297045" th:href="@{'/delete/' + ${blog.getId()}}">Delete</a> <!-- btn btn-secondary -->
+					<a class="btn btn-secondary" style="color:#ECBA82; background-color:#297045; border-color:#297045" th:href="@{'/delete/' + ${blog.getId()}}">Delete</a>
 					</br>
 					<span> </span></br>
 				</li>

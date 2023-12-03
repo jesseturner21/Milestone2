@@ -19,3 +19,8 @@ nav{
 .label {
   white-space: nowrap; /* Prevent label text from wrapping to the next line */
 }
+
+/* Set a maximum width for the text */
+.max-width-ex {
+  max-width: 700px; /* Adjust the value to your desired width */
+}

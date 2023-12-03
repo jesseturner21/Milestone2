@@ -12,11 +12,9 @@ import com.gcu.business.UserServiceInterface;
 @Configuration
 public class SpringConfig {
 
+	
 	@Bean(name="blogsBusinessService")
 	public BlogsBusinessServiceInterface getBlogsBuisiness() {
 		return new BlogsBusinessService();
 	}
-	
-
-	
 }
