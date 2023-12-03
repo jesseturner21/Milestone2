@@ -4,6 +4,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.validation.BindingResult;
@@ -12,6 +13,7 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 
 import com.gcu.business.BlogsBusinessServiceInterface;
+import com.gcu.business.UserService;
 import com.gcu.business.UserServiceInterface;
 import com.gcu.model.BlogModel;
 import com.gcu.model.LoginModel;
@@ -24,7 +26,7 @@ import jakarta.validation.Valid;
 public class HomeController {
 	
 	@Autowired 
-	UserServiceInterface service;
+	UserService service;
 	
 	@Autowired
 	private BlogsBusinessServiceInterface blogs;
@@ -46,8 +48,6 @@ public class HomeController {
 		System.out.print("in Login");
 		//model.addAttribute("title", "Login Form");
 		model.addAttribute("message", "Login");
-		LoginModel loginModel = new LoginModel();
-		model.addAttribute(loginModel);
 		
 		return "login";
 	}
@@ -96,7 +96,7 @@ public class HomeController {
 					model.addAttribute("title", "Sign Up");
 					return "signUp";
 				}
-		service.createUser(signUp.getFirstName(),signUp.getLastName() , signUp.getEmail(), signUp.getPhoneNumber(), signUp.getUsername(), signUp.getPassword());
+		service.createUser(signUp.getFirstName(),signUp.getLastName() , signUp.getEmail(), signUp.getPhoneNumber(), signUp.getUsername(), new BCryptPasswordEncoder().encode(signUp.getPassword()));
 		model.addAttribute("blogsDomain", blogs.getBlogs());
 		return "home";
 	}
