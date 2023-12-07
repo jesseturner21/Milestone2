@@ -4,10 +4,11 @@ import java.util.List;
 
 import org.springframework.data.jdbc.repository.query.Query;
 import org.springframework.data.repository.CrudRepository;
+import org.springframework.stereotype.Service;
 
 import com.gcu.data.entity.BlogEntity;
 import com.gcu.model.BlogModel;
-
+@Service
 public interface BlogsBusinessServiceInterface {
 	public void test();
 	public List<BlogModel> getBlogs();
@@ -16,7 +17,7 @@ public interface BlogsBusinessServiceInterface {
 	public List<BlogEntity> findAll();
 
 
-	BlogEntity findById(int id);
+	BlogModel findById(int id);
 
 	public void deleteById(int id);
 	BlogEntity updateBlog(BlogModel blogModel);

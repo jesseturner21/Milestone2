@@ -61,16 +61,9 @@ public class BlogController {
 	
 	@GetMapping("/update/{id}")
 	public String displayUpdateBlog(Model model, @PathVariable("id") int id) {
-		BlogEntity blog = service.findById(id);
-		BlogModel blogModel = new BlogModel();
-		blogModel.setId(blog.getId());
-		blogModel.setAuthor(blog.getAuthor());
-		blogModel.setContent(blog.getContent());
-		blogModel.setSubtitle(blog.getSubtitle());
-		blogModel.setDate(blog.getDate());
-		blogModel.setTitle(blog.getTitle());
+		BlogModel blog = service.findById(id);
 		model.addAttribute("message", "Update Blog");
-		model.addAttribute(blogModel);
+		model.addAttribute(blog);
 		
 		return "blog";
 		
