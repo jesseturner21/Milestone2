@@ -88,7 +88,9 @@ public class BlogsBusinessService implements BlogsBusinessServiceInterface{
 	}
 	
 	@Override
-	public BlogEntity findById(int id) {
-		return repo.findById((long)id).orElse(null);
+	public BlogModel findById(int id) {
+		BlogEntity entity = repo.findById((long)id).orElse(null);
+		return new BlogModel(entity.getId(), entity.getTitle(), entity.getSubtitle(),  entity.getContent(), entity.getAuthor(), entity.getDate());
+		
 	}
 }

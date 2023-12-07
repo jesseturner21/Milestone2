@@ -41,7 +41,7 @@ public class TestBlogsBusinessService implements BlogsBusinessServiceInterface{
 	}
 
 	@Override
-	public BlogEntity findById(int id) {
+	public BlogModel findById(int id) {
 		// TODO Auto-generated method stub
 		return null;
 	}
