@@ -2,6 +2,7 @@ package com.gcu;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
+import org.springframework.security.config.Customizer;
 import org.springframework.security.config.annotation.authentication.builders.AuthenticationManagerBuilder;
 import org.springframework.security.config.annotation.web.builders.HttpSecurity;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
@@ -19,22 +20,27 @@ public class WebSecurityConfig {
 	http 
 		.csrf(csrf -> csrf.disable())
 		.authorizeHttpRequests(auth -> auth
-				.requestMatchers("/" , "/signUp", "doSignUp","/images/**").permitAll()
-				.requestMatchers("/service/**").hasRole("USER")
-				.anyRequest().authenticated ())
-	.formLogin(form -> form
+
+			.requestMatchers("/" , "/signUp", "doSignUp","/images/**")
+			.permitAll()
+			.requestMatchers("/service/**")
+			.authenticated()
+			.anyRequest()
+			.authenticated())
+		.httpBasic(Customizer.withDefaults())
+		.formLogin(form -> form
 			.loginPage("/login" )
 			.usernameParameter("username")
 			.passwordParameter("password")
 			.permitAll()
 			.defaultSuccessUrl("/", true)) 
-	.logout (lo -> lo
+		.logout (lo -> lo
 			.logoutUrl("/logout")
 			.invalidateHttpSession(true)
 			.clearAuthentication(true)
 			.permitAll()
 			.logoutSuccessUrl("/"));
-	return http.build();
+		return http.build();
 	}
 	
 	@Autowired
